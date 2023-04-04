@@ -1,15 +1,25 @@
 ------------Использование PlayBook'ов-------------
 
 =========
-Версия Ansible =>2.4 требует для своей работы Python 2.6 или выше. Проверьте, что версии python и ansible достаточно новые: [user@fedora ansible]$ python -V
+Версия Ansible =>2.4 требует для своей работы Python 2.6 или выше. Проверьте, что версии python и ansible достаточно новые: 
+
+[user@fedora ansible]$ python -V
+
 • Если необходимо, установите ansible (yum install или apt install...) и убедитесь, что он корректно установлен
-Версия Ansible: [user@fedora ansible]$ ansible --version
+Версия Ansible: 
+
+[user@fedora ansible]$ ansible --version
 
 --------------
-Нужно поднять виртуалку: [user@ubunta ~ansible]$ vagrant up
+Нужно поднять виртуалку: 
+
+[user@ubunta ~ansible]$ vagrant up
 
 --------------
-Убедимся, что управляемый хост доступен, только теперь без явного указания inventory файла: [user@fedora ansible]$ ansible -m ping nginx
+Убедимся, что управляемый хост доступен, только теперь без явного указания inventory файла: 
+
+[user@fedora ansible]$ ansible -m ping nginx
+
 nginx | SUCCESS => {
 "ansible_facts": {
 "discovered_interpreter_python": "/usr/bin/python"
@@ -19,7 +29,10 @@ nginx | SUCCESS => {
 }
 
 --------------
-• Проверим статус сервиса firewalld: [user@fedora ansible]$ ansible nginx -m systemd -a name=firewalld
+• Проверим статус сервиса firewalld: 
+
+[user@fedora ansible]$ ansible nginx -m systemd -a name=firewalld
+
 nginx | SUCCESS => {
 "ansible_facts": {
 "discovered_interpreter_python": "/usr/bin/python"
@@ -31,10 +44,14 @@ nginx | SUCCESS => {
 "ActiveState": "inactive"
 
 --------------
-PlayBook который будет выполнять установку пакета epel-release: ansible-playbook epel.yml
+PlayBook который будет выполнять установку пакета epel-release: 
+
+ansible-playbook epel.yml
 
 --------------
-PlayBook для установки NGINX: ansible-playbook nginx.yml
+PlayBook для установки NGINX: 
+
+ansible-playbook nginx.yml
 
 --------------
 Пример PlayBook'a:

@@ -1,24 +1,24 @@
-------------Использование PlayBook'ов-------------
+**------------Использование PlayBook'ов-------------**
 
 =========
 Версия Ansible =>2.4 требует для своей работы Python 2.6 или выше. Проверьте, что версии python и ansible достаточно новые: 
 
-[user@fedora ansible]$ python -V
+**[user@fedora ansible]$ python -V**
 
 • Если необходимо, установите ansible (yum install или apt install...) и убедитесь, что он корректно установлен
 Версия Ansible: 
 
-[user@fedora ansible]$ ansible --version
+**[user@fedora ansible]$ ansible --version**
 
 --------------
 Нужно поднять виртуалку: 
 
-[user@ubunta ~ansible]$ vagrant up
+**[user@ubunta ~ansible]$ vagrant up**
 
 --------------
 Убедимся, что управляемый хост доступен, только теперь без явного указания inventory файла: 
 
-[user@fedora ansible]$ ansible -m ping nginx
+**[user@fedora ansible]$ ansible -m ping nginx**
 
 nginx | SUCCESS => {
 "ansible_facts": {
@@ -31,7 +31,7 @@ nginx | SUCCESS => {
 --------------
 • Проверим статус сервиса firewalld: 
 
-[user@fedora ansible]$ ansible nginx -m systemd -a name=firewalld
+**[user@fedora ansible]$ ansible nginx -m systemd -a name=firewalld**
 
 nginx | SUCCESS => {
 "ansible_facts": {
@@ -46,24 +46,30 @@ nginx | SUCCESS => {
 --------------
 PlayBook который будет выполнять установку пакета epel-release: 
 
-ansible-playbook epel.yml
+**[user@fedora ansible]$ ansible-playbook epel.yml**
 
 --------------
 PlayBook для установки NGINX: 
 
-ansible-playbook nginx.yml
+**[user@fedora ansible]$ ansible-playbook nginx.yml**
 
 --------------
-Пример PlayBook'a:
+**Пример PlayBook'a:**
 
 PLAY RECAP
 "******************************************************************
 ********** "
 
 nginx: ok=5 changed=2 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
----------------
+
+
+
+
+
+
+------------------------------
 Лицензия - AMG///// Production
 
 Автор: Аведисян В.Г.
 
----------------
+-----------------------------
